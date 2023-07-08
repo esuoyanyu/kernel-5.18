@@ -5,7 +5,7 @@ mmap映射，私有文件映射，共享文件映射，私有匿名映射，共�
 如果设置调用了mlockall系统调用，则通过mm_populate引发缺页中断，立即分配内存。
 ```
 
-## [mmap_pgoff](http://gitlab.esuoyanyu.com/kernel/common/-/tree/main/mm/mmap.c)
+## [mmap_pgoff](../../common/main/mm/mmap.c)
 ```
 SYSCALL_DEFINE6(mmap_pgoff, unsigned long, addr, unsigned long, len,
 		unsigned long, prot, unsigned long, flags,
@@ -15,7 +15,7 @@ SYSCALL_DEFINE6(mmap_pgoff, unsigned long, addr, unsigned long, len,
 }
 ```
 
-## [ksys_mmap_pgoff](http://gitlab.esuoyanyu.com/kernel/common/-/tree/main/mm/mmap.c)
+## [ksys_mmap_pgoff](../../common/main/mm/mmap.c)
 ```
 unsigned long ksys_mmap_pgoff(unsigned long addr, unsigned long len,
 			      unsigned long prot, unsigned long flags,
@@ -64,7 +64,7 @@ out_fput:
 }
 ```
 
-## [vm_mmap_pgoff](http://gitlab.esuoyanyu.com/kernel/common/-/tree/main/mm/util.c)
+## [vm_mmap_pgoff](../../common/main/mm/util.c)
 ```
 unsigned long vm_mmap_pgoff(struct file *file, unsigned long addr,
 	unsigned long len, unsigned long prot,
@@ -94,7 +94,7 @@ unsigned long vm_mmap_pgoff(struct file *file, unsigned long addr,
 }
 ```
 
-## [do_mmap](http://gitlab.esuoyanyu.com/kernel/common/-/tree/main/mm/mmap.c)
+## [do_mmap](../../common/main/mm/mmap.c)
 ```
 unsigned long do_mmap(struct file *file, unsigned long addr,
 			unsigned long len, unsigned long prot,
@@ -279,7 +279,7 @@ unsigned long do_mmap(struct file *file, unsigned long addr,
 }
 ```
 
-## [mmap_region](http://gitlab.esuoyanyu.com/kernel/common/-/tree/main/mm/mmap.c)
+## [mmap_region](../../common/main/mm/mmap.c)
 ```
 unsigned long mmap_region(struct file *file, unsigned long addr,
 		unsigned long len, vm_flags_t vm_flags, unsigned long pgoff,

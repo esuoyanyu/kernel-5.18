@@ -1,4 +1,4 @@
-# [brk](http://gitlab.esuoyanyu.com/kernel/common/-/tree/main/mm/mmap.c)
+# [brk](../../common/mm/mmap.c)
 ```
 malloc, 以M_MMAP_THRESHOLD(128K-64M)为阈值，小块内存使用brk系统调用，大块内存使用mmap系统调用，私有匿名映射的方法分配内存。
 start_brk:堆空间起始地址。
@@ -110,7 +110,7 @@ out:
 }
 ```
 
-## [do_brk_flags](http://gitlab.esuoyanyu.com/kernel/common/-/blob/main/mm/mmap.c)
+## [do_brk_flags](../../common/mm/mmap.c)
 ```
 static int do_brk_flags(unsigned long addr, unsigned long len, unsigned long flags, struct list_head *uf)
 {

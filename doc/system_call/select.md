@@ -1,4 +1,4 @@
-# [do_select](http://gitlab.esuoyanyu.com/kernel/common/-/tree/main/fs/select.c)
+# [do_select](../../common/main/fs/select.c)
 ```
 static int do_select(int n, fd_set_bits *fds, struct timespec64 *end_time)
 {
@@ -9,7 +9,7 @@ static int do_select(int n, fd_set_bits *fds, struct timespec64 *end_time)
 	retval = max_select_fd(n, fds);
 
 	n = retval;
-        
+
         /* 初始化工作队列项 */
 	poll_initwait(&table);
 	wait = &table.pt;
@@ -103,7 +103,7 @@ static int do_select(int n, fd_set_bits *fds, struct timespec64 *end_time)
 }
 ```
 
-## [poll_initwait](http://gitlab.esuoyanyu.com/kernel/common/-/tree/main/include/linux/poll.h)
+## [poll_initwait](../../common/include/linux/poll.h)
 ```
 void poll_initwait(struct poll_wqueues *pwq)
 {
@@ -117,7 +117,7 @@ void poll_initwait(struct poll_wqueues *pwq)
 	pwq->inline_index = 0;
 }
 ```
-### [init_poll_funcptr](http://gitlab.esuoyanyu.com/kernel/common/-/tree/main/include/linux/poll.h)
+### [init_poll_funcptr](../../common/include/linux/poll.h)
 ```
 void init_poll_funcptr(poll_table *pt, poll_queue_proc qproc)
 {
@@ -125,7 +125,7 @@ void init_poll_funcptr(poll_table *pt, poll_queue_proc qproc)
 	pt->_key   = ~(__poll_t)0; /* all events enabled */
 }
 ```
-### [__pollwait](common/fs/select.c)
+### [__pollwait](../../common/fs/select.c)
 ```
 static void __pollwait(struct file *filp, wait_queue_head_t *wait_address,
 				poll_table *p)
@@ -144,7 +144,7 @@ static void __pollwait(struct file *filp, wait_queue_head_t *wait_address,
 	add_wait_queue(wait_address, &entry->wait);
 }
 ```
-### [pollwake](common/fs/select.c)
+### [pollwake](../../common/fs/select.c)
 ```
 int pollwake(wait_queue_entry_t *wait, unsigned mode, int sync, void *key)
 {
@@ -156,7 +156,7 @@ int pollwake(wait_queue_entry_t *wait, unsigned mode, int sync, void *key)
 	return __pollwake(wait, mode, sync, key);
 }
 ```
-### [__pollwake](common/fs/select.c)
+### [__pollwake](../../common/fs/select.c)
 ```
 static int __pollwake(wait_queue_entry_t *wait, unsigned mode, int sync, void *key)
 {
@@ -187,7 +187,7 @@ static int __pollwake(wait_queue_entry_t *wait, unsigned mode, int sync, void *k
 }
 ```
 
-## [poll_schedule_timeout](common/fs/select.c)
+## [poll_schedule_timeout](../../common/fs/select.c)
 ```
 int poll_schedule_timeout(struct poll_wqueues *pwq, int state,
 			  ktime_t *expires, unsigned long slack)
@@ -221,7 +221,7 @@ int poll_schedule_timeout(struct poll_wqueues *pwq, int state,
 }
 ```
 
-## [poll_wait](common/include/linux/poll.h)
+## [poll_wait](../../common/include/linux/poll.h)
 ```
 /*驱动程序调用，把等待队列项加入到等待队列头中*/
 void poll_wait(struct file * filp, wait_queue_head_t * wait_address, poll_table *p)
