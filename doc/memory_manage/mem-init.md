@@ -3,7 +3,7 @@
 > 创建恒等映射，把整个Image映射到虚拟地址空间，虚拟地址空间预留出FDT空间和SWAPPER_BLOCK空间。
 > 在使能MMU后要使用虚拟地址空间，在使能MMU之前使用的物理地址空间，所以需要创建恒等映射来过渡。
 
-[create_idmap](../../common/arch/arm64/kernel/head.S)
+[create_idmap](../common/arch/arm64/kernel/head.S)
 ```
 SYM_FUNC_START_LOCAL(create_idmap)
 	mov	x28, lr
