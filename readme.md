@@ -9,10 +9,10 @@
 > 通读了《深入linux内核架构》  
 > 系统调用 mmap/brk/select  
 > 进程调度 主调调度器/周期调度器  
-> 内存管理 系统内存初始化.页表的建立.memblock分配器  
+> 内存管理 系统内存初始化.页表的建立.memblock分配器.伙伴系统  
 
 > doing:  
-> 内存管理.伙伴系统/slab/kmalloc/vmalloc  
+> 内存管理.slab/kmalloc/vmalloc  
 
 > to do:  
 > 进程调度.CFS+进程管理相关  
