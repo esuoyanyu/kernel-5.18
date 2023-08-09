@@ -12,7 +12,7 @@
 > 内存管理 系统内存初始化/页表的建立/memblock分配器/伙伴系统  
 
 > doing: 
-> 进程管理.CFS 
+> 进程管理.CFS  
 > 内存管理.vmalloc  
 
 > to do:  
